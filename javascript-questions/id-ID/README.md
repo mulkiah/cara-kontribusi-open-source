@@ -1,5 +1,5 @@
 <div align="center">
-  <img height="60" src="https://img.icons8.com/color/344/javascript.png"> 
+  <img height="60" src="https://img.icons8.com/color/344/javascript.png">
   <h1>Pertanyaan JavaScript</h1>
 
 ---
@@ -259,11 +259,11 @@ console.log(b === c);
 
 #### Jawaban: C
 
-`new Number()` is a built-in function constructor. Although it looks like a number, it's not really a number: it has a bunch of extra features and is an object.
+`new Number()` merupakan sebuah fungsi konstruktor bawaan. Meskipun terlihat seperti number, sebenarnya ini bukan number: ia memiliki banyak fitur tambahan dan merupakan sebuah objek.
 
-When we use the `==` operator, it only checks whether it has the same _value_. They both have the value of `3`, so it returns `true`.
+Saat kita menggunakan operator `==`, ia hanya akan memeriksa apakah ia memiliki _value_ yang sama. Keduanya memiliki nilai `3`, sehingga mengembalikan `true`.
 
-However, when we use the `===` operator, both value _and_ type should be the same. It's not: `new Number()` is not a number, it's an **object**. Both return `false.`
+Akan tetapi, saat kita menggunakan operator `===`, nilai dan tipe harus sama. `new Number()` bukan merupakan sebuah number, itu merupakan sebuah **object**. Keduanya akan mengembalikan `false.`
 
 </p>
 </details>
@@ -273,24 +273,24 @@ However, when we use the `===` operator, both value _and_ type should be the sam
 ###### 8. Apa yang akan tampil?
 
 ```javascript
-class Chameleon {
+class Bunglon {
   static colorChange(newColor) {
     this.newColor = newColor;
     return this.newColor;
   }
 
-  constructor({ newColor = 'green' } = {}) {
+  constructor({ newColor = 'hijau' } = {}) {
     this.newColor = newColor;
   }
 }
 
-const freddie = new Chameleon({ newColor: 'purple' });
-console.log(freddie.colorChange('orange'));
+const freddie = new Bunglon({ newColor: 'ungu' });
+console.log(freddie.colorChange('oranye'));
 ```
 
-- A: `orange`
-- B: `purple`
-- C: `green`
+- A: `oranye`
+- B: `ungu`
+- C: `hijau`
 - D: `TypeError`
 
 <details><summary><b>Jawaban</b></summary>
@@ -298,7 +298,9 @@ console.log(freddie.colorChange('orange'));
 
 #### Jawaban: D
 
-The `colorChange` function is static. Static methods are designed to live only on the constructor in which they are created, and cannot be passed down to any children. Since `freddie` is a child, the function is not passed down, and not available on the `freddie` instance: a `TypeError` is thrown.
+Fungsi `colorChange` ini statis. Metode Statik didesain untuk berlangsung hanya pada konstruktor yang mana telah dibuat, dan tidak bisa diturunkan ke anaknya. Dikarenakan `freddie` itu anak, fungsinya tidak bisa diwariskan, dan tidak tersedia pada `freddie` contoh: sebuah `TypeError` akan dimunculkan.
+
+ <!-- Static methods are designed to live only on the constructor in which they are created, and cannot be passed down to any children. Since `freddie` is a child, the function is not passed down, and not available on the `freddie` instance: a `TypeError` is thrown. -->
 
 </p>
 </details>
@@ -594,11 +596,11 @@ checkAge({ age: 18 });
 
 #### Jawaban: C
 
-When testing equality, primitives are compared by their _value_, while objects are compared by their _reference_. JavaScript checks if the objects have a reference to the same location in memory.
+Ketika menguji persamaan, tipe data primitif dibandingkan dengan _value nya_, sementara objek dibandingkan dengan _reference nya_. JavaScript memeriksa apakah objek memiliki referensi atas lokasi yang sama di memori.
 
-The two objects that we are comparing don't have that: the object we passed as a parameter refers to a different location in memory than the object we used in order to check equality.
+Dua objek yang kita bandingkan tidak memiliki itu: objek yang kita umpan sebagai parameter merujuk ke lokasi yang berbeda dengan memori dari objek yang kita gunakan untuk memeriksa persamaan.
 
-This is why both `{ age: 18 } === { age: 18 }` and `{ age: 18 } == { age: 18 }` return `false`.
+Inilah mengapa diantara `{ age: 18 } === { age: 18 }` dan `{ age: 18 } == { age: 18 }` mengembalikan `false`.
 
 </p>
 </details>
@@ -661,7 +663,7 @@ With `"use strict"`, you can make sure that you don't accidentally declare globa
 
 ---
 
-###### 21. What's value of `sum`?
+###### 21. Berapa nilai dari `sum`?
 
 ```javascript
 const sum = eval('10*10+5');
@@ -677,23 +679,23 @@ const sum = eval('10*10+5');
 
 #### Jawaban: A
 
-`eval` evaluates codes that's passed as a string. If it's an expression, like in this case, it evaluates the expression. The expression is `10 * 10 + 5`. This returns the number `105`.
+`eval` Dengan fungsi eval ini, akan mengevaluasi kode yang diteruskan sebagai string. Jika itu adalah sebuah ekspresi, seperti dalam kasus ini, maka mengevaluasi ekspresi tersebut. Ekspresinya itu `10 * 10 + 5`. yang akan mengembalikan angka `105`.
 
 </p>
 </details>
 
 ---
 
-###### 22. How long is cool_secret accessible?
+###### 22. Berapa lama cool_secret dapat diakses?
 
 ```javascript
 sessionStorage.setItem('cool_secret', 123);
 ```
 
-- A: Forever, the data doesn't get lost.
-- B: When the user closes the tab.
-- C: When the user closes the entire browser, not only the tab.
-- D: When the user shuts off their computer.
+- A: Selamanya, data tidak akan hilang.
+- B: Saat pengguna menutup tab.
+- C: Saat pengguna menutup seluruh browser, tidak hanya tab.
+- D: Saat pengguna mematikan komputer mereka.
 
 <details><summary><b>Jawaban</b></summary>
 <p>
@@ -840,7 +842,7 @@ The `continue` statement skips an iteration if a certain condition returns `true
 
 ```javascript
 String.prototype.giveLydiaPizza = () => {
-  return 'Just give Lydia pizza already!';
+  return 'Berikan saja Lydia pizza!';
 };
 
 const name = 'Lydia';
@@ -848,7 +850,7 @@ const name = 'Lydia';
 name.giveLydiaPizza();
 ```
 
-- A: `"Just give Lydia pizza already!"`
+- A: `"Berikan saja Lydia pizza!"`
 - B: `TypeError: not a function`
 - C: `SyntaxError`
 - D: `undefined`
@@ -858,7 +860,7 @@ name.giveLydiaPizza();
 
 #### Jawaban: A
 
-`String` is a built-in constructor, which we can add properties to. I just added a method to its prototype. Primitive strings are automatically converted into a string object, generated by the string prototype function. So, all strings (string objects) have access to that method!
+_`String`_ adalah konstruktor bawaan, dimana kita dapat menambahkan propertinya. Saya baru saja menambahkan sebuah metode ke prototipe _`String`_. _String_ primitif secara otomatis diubah menjadi objek _string_, yang dihasilkan oleh fungsi prototipe _string_. Jadi, semua _string_ (objek _string_) memiliki akses ke metode itu!
 
 </p>
 </details>
@@ -2049,7 +2051,7 @@ On the fourth call, we again don't return from the callback function. The accumu
 
 </p>
 </details>
-  
+
 ---
 
 ###### 66. With which constructor can we successfully extend the `Dog` class?
@@ -2887,9 +2889,9 @@ console.log(newList.push(5));
 
 #### Jawaban: D
 
-The `.push` method returns the _new length_ of the array, not the array itself! By setting `newList` equal to `[1, 2, 3].push(4)`, we set `newList` equal to the new length of the array: `4`.
+Metode `.push` mengembalikan _index baru_ dari sebuah array, namun bukan array itu sendiri! dengan membuat variabel `newList` sama dengan `[1, 2, 3].push(4)`, kita membuat `newList` sama dengan panjang baru array: `4`.
 
-Then, we try to use the `.push` method on `newList`. Since `newList` is the numerical value `4`, we cannot use the `.push` method: a TypeError is thrown.
+Kemudian, kami mencoba menggunakan metode `.push` di` newList`. Karena `newList` adalah nilai numerik` 4`, kita tidak dapat menggunakan metode `.push`: TypeError dilempar.
 
 </p>
 </details>
